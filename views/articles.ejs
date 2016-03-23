@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+
+    <h1>Articles</h1>
+
+    <% for(var i=0;i<articles.length;i++){ %>
+    <div class="article-container">
+        <h3><%- articles[i].title %></h3>
+        <p><%- articles[i].content %></p>
+    </div>
+    <hr/>
+    <% } %>
+
+</body>
+</html>

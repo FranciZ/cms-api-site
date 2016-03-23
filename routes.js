@@ -51,8 +51,7 @@ exports.init = function(server){
         });
         
     });
-    
-    
+
     // CREATE 
     server.post('/api/article', function(req, res){
        

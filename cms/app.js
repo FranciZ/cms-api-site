@@ -1,4 +1,10 @@
-angular.module('simpleCrud', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
+angular.module('simpleCrud', [
+    'ui.bootstrap',
+    'ui.utils',
+    'ui.router',
+    'ngAnimate',
+    'ui.tinymce'
+]);
 
 angular.module('simpleCrud').config(function($stateProvider, $urlRouterProvider) {
 
