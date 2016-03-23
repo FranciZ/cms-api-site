@@ -1,11 +1,15 @@
 <section class="content-header">
     <h1>Edit article</h1>
-
-
     <div class="btn btn-xs btn-danger" ng-click="onDeleteClick()">Delete</div>
-
-
 </section>
 <section class="content">
+    <label>Created on</label>
+    <p>{{article.dateCreated}}</p>
+    <label>Title</label>
+    <input type="text" ng-model="article.title" class="form-control">
+    <label>Content</label>
+    <textarea class="form-control" ng-model="article.content"></textarea>
+    <br/>
+    <div class="btn btn-success" ng-click="onSaveClick()">Save</div>
 
 </section>

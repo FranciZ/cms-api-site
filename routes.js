@@ -15,6 +15,24 @@ exports.init = function(server){
         });
         
     });
+
+    server.put('/api/article/:id', function(req, res){
+
+        var id = req.params.id;
+
+        var Article = mongoose.model('Article');
+
+        Article.findByIdAndUpdate(id, req.body, function(err, doc){
+
+            if(!err){
+                res.send(doc);
+            }else{
+                res.sendStatus(400);
+            }
+
+        });
+
+    });
     
     server.delete('/api/article/:id', function(req, res){
         

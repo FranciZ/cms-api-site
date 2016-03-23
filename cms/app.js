@@ -8,14 +8,14 @@ angular.module('simpleCrud').config(function($stateProvider, $urlRouterProvider)
         controller:'ArticlesCtrl',
         resolve:{
             articles:function(articleService){
-                
+
                 return articleService.getAll();
-                
+
             }
         }
     });
-    
-    
+
+
     $stateProvider.state('new-article', {
         url: '/new-article',
         templateUrl: 'partial/new-article/new-article.html',
@@ -29,7 +29,14 @@ angular.module('simpleCrud').config(function($stateProvider, $urlRouterProvider)
     $stateProvider.state('edit-article', {
         url: '/edit-article/:id',
         templateUrl: 'partial/edit-article/edit-article.html',
-        controller:'EditArticleCtrl'
+        controller:'EditArticleCtrl',
+        resolve:{
+            article:function(articleService, $stateParams){
+
+                return true;
+
+            }
+        }
     });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/articles');
