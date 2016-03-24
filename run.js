@@ -16,6 +16,7 @@ server.use(bodyParser.urlencoded({ extended:true }));
 database.connect(function(){
     
     require('./models/article');
+    require('./models/project');
 
     server.listen(3000, function(){
    

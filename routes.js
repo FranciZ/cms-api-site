@@ -58,21 +58,44 @@ exports.init = function(server){
         var Article = mongoose.model('Article');
         
         var data = req.body;
-        
-        var title = data.title;
-        var content = data.content;
-        
+
         var newArticle = new Article(data);
         
         newArticle.save(function(err){
-           
-            console.log(err);
-            res.send(data);
+
+            if(!err) {
+                res.send(data);
+            }else{
+                console.log(err);
+                res.sendStatus(400);
+            }
             
         });
         
     });
-    
+
+    server.post('/api/project', function(req, res){
+
+        var data = req.body;
+
+        var Project = mongoose.model('Project');
+
+        var newProject = new Project(data);
+
+        newProject.save(function(err){
+
+            if(!err){
+                res.send(newProject);
+            }else{
+                console.log(err);
+                res.sendStatus(400);
+            }
+
+        });
+
+
+    });
+
 };
 
 

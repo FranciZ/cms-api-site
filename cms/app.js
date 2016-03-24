@@ -44,6 +44,11 @@ angular.module('simpleCrud').config(function($stateProvider, $urlRouterProvider)
             }
         }
     });
+    $stateProvider.state('new-project', {
+        url: '/new-project',
+        templateUrl: 'partial/new-project/new-project.html',
+        controller:'NewProjectCtrl'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/articles');
 

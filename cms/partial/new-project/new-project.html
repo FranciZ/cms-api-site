@@ -1,0 +1,13 @@
+<section class="content-header">
+    <h1>New project</h1>
+</section>
+<section class="content">
+
+    <label>Project name</label>
+    <input type="text" class="form-control" ng-model="project.title">
+    <label>Project description</label>
+    <textarea ui-tinymce ng-model="project.description"></textarea>
+    <br/>
+    <div class="btn btn-success" ng-click="onSaveClick()">Save</div>
+
+</section>
